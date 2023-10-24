@@ -16,11 +16,10 @@ public class ProxyConnection implements Connection {
 
     @Override
     public void close() {
-
-
+        ConnectionPool.getInstance();
     }
     @Override
     public boolean isClosed() {
-        return false;
+        return realConnection.isClosed();
     }
 }
